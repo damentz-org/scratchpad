@@ -13,7 +13,7 @@ jobs:
 
       - name: Restore Cache
         id: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
@@ -33,7 +33,7 @@ jobs:
 
       - name: Save Cache
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
